@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';import "./App.css";
+import './index.css'; import "./App.css";
 import Header from './Header.js';
 import Main from './Main.js';
 import Modal from './Modal.js';
@@ -8,19 +8,19 @@ import Editor from './Editor.js';
 import reportWebVitals from './reportWebVitals';
 
 function App() {
-  
+
   return (
-  <div>
-  <Modal />
-  <Header />
-  <Main />
-  <Editor />
-  </div>
+    <div>
+      <Modal />
+      <Header />
+      <Main />
+      <Editor />
+    </div>
   )
 }
 ReactDOM.render(
   <React.StrictMode>
-   <App /> 
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

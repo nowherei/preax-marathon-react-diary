@@ -649,7 +649,8 @@ button:active {
   }
   .mobile-modal-img {
     display: block;
-    width: 100%;height:100%;
+    width: 100%;
+    height: 100%;
   }
   .mobile-modal-body {
     display: flex;
@@ -657,18 +658,19 @@ button:active {
     height: 100%;
   }
   .mobile-gallery {
-      display:flex;
+    display: flex;
   }
   .editor-add-button {
     position: absolute;
-    left:30%;bottom:20%;
+    left: 30%;
+    bottom: 20%;
   }
   .editor-gallery-wrapper {
-      display:none;
+    display: none;
   }
   .mob-gallery-img {
-      width:100%;
-      height:100%;
+    width: 100%;
+    height: 100%;
   }
   .modal-close {
     position: absolute;
@@ -681,21 +683,22 @@ button:active {
 }
 
 .showMobGallery {
-    position:fixed;
-    z-index: 5;
-    width: 100%;
-    height:100%;
-    top:0;left:0;
-    backdrop-filter: blur(10px);
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: scroll;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
 }
 
 .gallery-mob-image {
-    width:70%;
-    margin:5%;
-    border-radius: 12px;
+  width: 70%;
+  margin: 5%;
+  border-radius: 12px;
 }
