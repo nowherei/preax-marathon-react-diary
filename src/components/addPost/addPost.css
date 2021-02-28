@@ -1,0 +1,118 @@
+.header-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 23px;;
+}
+.inputs{
+    display: flex;
+    align-items: center;
+}
+.input-title{
+    height: 60px;
+    width: 670px;
+    border-radius: 12px;
+    border: none;
+    margin-left: 40px;
+    padding-left: 16px;
+}
+.input-search{
+    height: 60px;
+    width: 596px;
+    border-radius: 12px;
+    border: none;
+    margin-left: 20px;
+    padding-left: 16px;
+}
+.input-search-image{
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    border: none;
+    background: #FFF76A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 14px;
+    cursor: pointer;
+}
+.note-box{
+    display: flex;
+    margin-top: 30px;
+}
+.note-box-block{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+.block-row{
+    display: flex;
+    align-items: center;
+}
+.input-data{
+    margin-left: 16px;
+    font-size: 18px;
+    font-weight: 300;
+    height: 39px;
+    width: 194px;
+    border-radius: 12px;
+    padding-left: 16px;
+    border: none;
+}
+.box-text{
+    height: 458px;
+    width: 654px;
+    border-radius: 12px;
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 21px 0 0 16px;
+    border: none;
+}
+textarea{
+    resize: none;
+}
+.note-box-images{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+.block-image img, .note-area img{
+    border-radius: 12px;
+}
+.block-image img{
+    height: 489px;
+    width: 327px;
+    margin: 7px;
+}
+.note-area img{
+    height: 236px;
+    width: 329px;
+}
+.create{
+    margin: 20px 0 0 460px;
+}
+.note-check{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    border: none;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    font-size: 30px;
+    top: 40%;
+    left: 40%;
+}
+.checked{
+    position: relative;
+}
+
+@media (max-width: 854px) {
+    .adaptiv{
+        margin-left: 0;
+    }
+}

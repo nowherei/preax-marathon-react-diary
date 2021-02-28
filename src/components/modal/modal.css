@@ -1,0 +1,83 @@
+.modal-box{
+    position: relative;
+    height: 947px;
+    width: 1360px;
+    border-radius: 12px;
+    padding: 50px 40px 0 40px;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid;
+}
+.modal-header img{
+    height: 48px;
+    width: 48px;
+    margin-top: 12px;
+}
+.modal-title{
+    font-size: 48px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+.modal-time{
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 16px;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+}
+.modal-feel{
+    display: flex;
+}
+.modal-wrapper{
+    display: flex;
+}
+.modal-wrapper img{
+    height: 748px;
+    width: 500px;
+    border-radius: 12px;
+    margin-top: 39px;
+}
+.modal-descr {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 39px 0 0 40px;
+}
+.modal-close{
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+    right: 18px;
+    top: 0;
+}
+
+@media (max-width: 854px) {
+    .modal-box{
+        width: 600px;
+    }
+    .modal-wrapper img{
+        height: 254px;
+        width: 381px;
+    }
+    .modal-wrapper{
+        flex-direction: column;
+    }
+    .modal-descr{
+        font-size: 14px;
+        margin-left: 0;
+    }
+    .modal-title{
+        font-size: 30px;
+    }
+    .modal-time{
+        font-size: 18px;
+        margin-top: 12px;
+    }
+    .modal-header img{
+        margin-top: 0;
+    }
+    .modal-box{
+        height: 770px;
+    }
+}

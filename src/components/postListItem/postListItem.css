@@ -1,0 +1,74 @@
+
+.note_1{
+    background: url(../postList/note_1.png) center center / cover no-repeat;
+}
+.note_2{
+    background: url(../postList/note_11.png) center center / cover no-repeat;
+}
+.note_3{
+    background: url(../postList/note_2.png) center center / cover no-repeat;
+}
+.note_4{
+    background: url(../postList/note_3.png) center center / cover no-repeat;
+}
+.note_5{
+    background: url(../postList/note_4.png) center center / cover no-repeat;
+}
+.note_6{
+    background: url(../postList/note_5.png) center center / cover no-repeat;
+}
+.note_7{
+    background: url(../postList/note_6.png) center center / cover no-repeat;
+}
+.note_8{
+    background: url(../postList/note_7.png) center center / cover no-repeat;
+}
+.note_9{
+    background: url(../postList/note_8.png) center center / cover no-repeat;
+}
+.note_10{
+    background: url(../postList/note_9.png) center center / cover no-repeat;
+}
+.note_11{
+    background: url(../postList/note_10.png) center center / cover no-repeat;
+}
+.note-round{
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 14px 14px 0 0;
+}
+.note-text-box{
+    height: 65px;
+    width: 297px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: -1px;
+    padding: 0 15px;
+}
+.note-text-div{
+    display: flex;
+    justify-content: space-between;
+}
+.note-text-title{
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.note-text-data{
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 300;
+}
+.note-text-descr{
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #1E2022;
+}
