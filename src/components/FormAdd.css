@@ -1,0 +1,109 @@
+.form-add input,
+.form-add select,
+.form-add textarea {
+  margin-bottom: 1.6rem;
+}
+
+.form-add__field-title, 
+.form-add__field-text {
+  width: 100%;
+}
+
+.form-add__field-emoji {
+  margin-right: 1.6rem;
+}
+
+.form-add__field-text {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: none;
+  resize: none;
+  height: 47.8rem;
+}
+
+.form-add__button-submit {
+  background: linear-gradient(135deg, #61B15A 0%, #ADCE74 100%);
+  border: none;
+  color: #FFFFFF;
+  float: right;
+  position: relative;
+  cursor: pointer;
+}
+
+.form-add__button-submit::before {  
+  background: url('../assets/icon-form-create.svg') no-repeat;
+}
+
+.form-add__search {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+input.form-add__search-input {
+  margin: 0;
+  margin: 0 1.4rem 0 0;
+  flex-grow: 1;
+}
+
+.form-add__search-button {
+  width: 60px;
+  cursor: pointer;
+  background: #FFF76A;
+  border-radius: 12px;
+  border: none;
+  text-indent: -9999px;
+  position: relative;
+}
+
+.form-add__search-button::before {
+  content: '';
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url('../assets/search-found.svg') no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-add__gallery .row {
+  margin-right: -7px;
+  margin-left: -7px;
+}
+
+.form-add__gallery > .row > [class^="col-"]  {
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+.form-add__gallery-item {
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.form-add__gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-add__gallery-item_active::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6rem;
+  height: 6rem;
+  background: rgba(255, 255, 255, 0.7);
+  background-image: url('../assets/check.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  border-radius: 3rem;
+}
