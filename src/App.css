@@ -164,13 +164,12 @@ button:active {
   position: relative;
   height: 280px;
   width: 325px;
-  border-radius: 0px;
+  border-radius: 12px;
   overflow: hidden;
 }
 .card-img {
   width: 100%;
   height: 100%;
-  border-radius: 0px;
 }
 .card-smile-circle {
   position: absolute;
