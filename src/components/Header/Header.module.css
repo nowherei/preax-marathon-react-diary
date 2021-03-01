@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap");
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: calc(100%);
+
+  background-color: #fdfcf3;
+}
+.container {
+  max-width: 1390px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 36px 0px 0px 0px;
+  margin-bottom: 44px;
+}
+.logo {
+  max-width: 227px;
+}
+.logo img {
+  width: 100%;
+}
+.search {
+  display: flex;
+  margin-right: 0;
+  margin-left: auto;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  margin-left: 21px;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 8px 34px 8px 73px;
+  margin-left: 14px;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 34px;
+  width: 24px;
+  height: 24px;
+}
+.btn__orange {
+  background: #ffce89;
+  color: #1e2022;
+}
+.btn__green {
+  background: linear-gradient(135deg, #61b15a 0%, #adce74 100%);
+  color: #ffffff;
+}
+
+.btn__orange::before {
+  background: url(../../assets/display-grid.svg) no-repeat;
+}
+.btn__green::before {
+  background: url(../../assets/pen.svg) no-repeat;
+}
+
+/* @media (max-width: 1024px) {
+  .btn {
+    padding-left: calc(34px + 39 * ((100vw - 1024px) / 1360));
+    padding-right: calc(20px + 14 * ((100vw - 1024px) / 1360));
+  }
+} */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 calc(20px + 60 * ((100vw - 0px) / 1024));
+  }
+  .headerContent {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .logo {
+    margin-right: 0;
+  }
+  .search {
+    flex-basis: 100%;
+    order: 3;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    margin-top: 0;
+    padding: 0;
+  }
+  .header {
+    position: static;
+  }
+  .btns {
+    position: fixed;
+    left: 0;
+    bottom: 14px;
+    z-index: 3;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .btn:first-child {
+    margin: 0;
+  }
+}
+@media (max-width: 410px) {
+  .logo {
+    max-width: 151px;
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .btn {
+    flex-basis: 50%;
+    max-height: 30px;
+  }
+  .btn::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .btn span {
+    font-size: 0;
+  }
+}

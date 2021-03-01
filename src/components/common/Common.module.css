@@ -1,0 +1,66 @@
+.searchInput {
+  display: block;
+  margin-right: 14px;
+  width: 100%;
+  /* margin: 0px 14px 0px 156px; */
+}
+.searchInput input {
+  padding: 20px 10px 20px 16px;
+  width: 100%;
+
+  background: #ffffff;
+  border-radius: 12px;
+}
+.moodSelect {
+  position: relative;
+  display: inline-block;
+}
+.moodSelect select {
+  display: inline-block;
+  min-width: 100%;
+
+  padding: 18px 60px 18px 16px;
+  background: none;
+  background-color: #ffffff;
+  border-radius: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.moodSelect::after {
+  position: absolute;
+  content: url(../../assets/chevron-down.svg);
+
+  width: 24px;
+  height: 24px;
+
+  top: calc(50% - 24px / 2);
+  right: 16px;
+  z-index: 3;
+  cursor: pointer;
+}
+.moodSelect option {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+@media (min-width: 1025px) {
+  .searchInput {
+    /* margin-left: calc(30px + 126 * ((100vw - 1024px) / 1360)); */
+    width: calc(200px + 280 * ((100vw - 1024px) / 1360));
+  }
+}
+@media (max-width: 540px) {
+  .moodSelect select {
+    padding: 8px 40px 8px 16px;
+  }
+  .moodSelect::after {
+    top: 7px;
+  }
+  .searchInput input {
+    padding: 10px 10px 11px 16px;
+  }
+}

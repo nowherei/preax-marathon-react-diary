@@ -1,0 +1,41 @@
+.image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 10px;
+  grid-auto-flow: dense;
+  grid-gap: 1px 10px;
+}
+
+.image-list img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+}
+.active {
+  position: relative;
+  display: block;
+}
+.active::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+}
+.active::after {
+  content: url(../../assets/check.svg);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background: url() no-repeat;
+}
