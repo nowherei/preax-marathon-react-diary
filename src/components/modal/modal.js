@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './modal.css';
 
 export default class Modal extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         const {img, title, data, descr, imgPost} = this.props;
 
@@ -14,7 +11,7 @@ export default class Modal extends Component {
                     <div className="modal-header">
                         <div className="modal-feel">
                             <div>
-                                <img src={img}/>
+                                <img src={img} alt=""/>
                             </div>
                             <div className="modal-title">
                                 <span>{title}</span>
@@ -25,7 +22,7 @@ export default class Modal extends Component {
                         </div>
                     </div>
                     <div className="modal-wrapper">
-                        <img src={imgPost}/>
+                        <img src={imgPost} alt=""/>
                         <div className="modal-descr">
                             {descr}
                         </div>

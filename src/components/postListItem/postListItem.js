@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 import './postListItem.css';
 
 export default class PostListItem extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
-        const {imgSmile, title, date, descr} = this.props;
+        const {imgSmile, title, date, descr, img} = this.props;
 
         return (
-            <>
-                <div className="note-round">
-                    <img src={imgSmile}/>
-                </div>
+            <div className="note-img">
+                <figure className="note-background">
+                    <img src={img} alt={title} />
+                </figure>
+                <div className="note-round">{imgSmile}</div>
                 <div className="note-text-box">
                     <div className="note-text-div">
                         <div className="note-text-title">{title}</div>
@@ -22,7 +20,7 @@ export default class PostListItem extends Component {
                         <div className="note-text-descr">{descr}</div>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }
