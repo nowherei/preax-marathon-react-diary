@@ -5,7 +5,7 @@ import classes from '../NewNote/NewNote.module.css';
 class SearchBar extends React.Component {
   state = { term: '' };
 
-  onFormSubit = (e) => {
+  onFormSubmit = (e) => {
     e.preventDefault();
 
     this.props.onFormSubmit(this.state.term);
@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubit} className={classes.searchForm}>
+      <form onSubmit={this.onFormSubmit} className={classes.searchForm}>
         <div className={classes.input}>
           <input type='text' value={this.state.term} onChange={(e) => this.setState({ term: e.target.value })} placeholder='Поиск' />
         </div>
