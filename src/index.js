@@ -1,23 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; import "./App.css";
-import Header from './Header.js';
-import Main from './Main.js';
-import Modal from './Modal.js';
-import Editor from './Editor.js';
+import './index.css'; 
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
-function App() {
-
-  return (
-    <div>
-      <Modal />
-      <Header />
-      <Main />
-      <Editor />
-    </div>
-  )
-}
 ReactDOM.render(
   <React.StrictMode>
     <App />

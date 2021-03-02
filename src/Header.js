@@ -1,29 +1,13 @@
+function Header({ toggleEditor }) {
 
-function Header() {
-  function openEditor() {
-    let main = document.getElementsByClassName('main-wrapper');
-    let editor = document.getElementsByClassName('editor-wrapper');
-    let topSearch = document.getElementsByClassName('header-search');
-    let tags = document.getElementsByClassName('header-tag');
-    let mobSearch = document.getElementsByClassName('mobile-search');
-    main[0].style.display = "none";
-    editor[0].style.display = "flex";
-    topSearch[0].style.visibility = 'hidden';
-    tags[0].style.visibility = 'hidden';
-    mobSearch[0].style.visibility = 'hidden';
+  const showEditor = () => {
+    toggleEditor(true)
   }
-  function openModal() {
-    let main = document.getElementsByClassName('main-wrapper');
-    let editor = document.getElementsByClassName('editor-wrapper');
-    let topSearch = document.getElementsByClassName('header-search');
-    let tags = document.getElementsByClassName('header-tag');
-    let mobSearch = document.getElementsByClassName('mobile-search');
-    main[0].style.display = "flex";
-    editor[0].style.display = "none";
-    topSearch[0].style.visibility = 'visible ';
-    tags[0].style.visibility = 'visible ';
-    mobSearch[0].style.visibility = 'visible';
+
+  const hideEditor = () => {
+    toggleEditor(false);
   }
+
   return (
     <div className="header-wrap">
       <header className="header">
@@ -90,7 +74,7 @@ function Header() {
           </button>
         </div>
         <div className="header-button-wrapper">
-          <button onClick={openModal} className="header-button-feed">
+          <button className="header-button-feed" onClick={hideEditor}>
             <div><svg
               width="18"
               height="18"
@@ -111,7 +95,7 @@ function Header() {
             </svg></div>
             <span className="header-button-text">Список</span>
           </button>
-          <button className="header-button-add hide" onClick={openEditor}>
+          <button className="header-button-add hide" onClick={showEditor}>
             <div><svg
               width="21"
               height="21"
