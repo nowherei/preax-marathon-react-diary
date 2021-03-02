@@ -9,7 +9,7 @@ function MoodSelect() {
         <div className={classes.moodSelect} >
             <select name='mood'>
                 {
-                    moods.map((mood, index) => <option value={`mood${index}`}>{mood}</option>)
+                    moods.map((mood, index) => <option key={index} value={`mood${index}`}>{mood}</option>)
                 }
             </select>
         </div>

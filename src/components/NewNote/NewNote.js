@@ -2,7 +2,6 @@ import React from 'react';
 import MoodSelect from '../common/MoodSelect';
 import Gallery from '../Gallery/Gallery';
 import classes from './NewNote.module.css';
-// import photo from '../../../assets/bg_images/day-1.jpg';
 
 
 function NewNote() {
@@ -31,13 +30,12 @@ function NewNote() {
         <div className={classes.column}>
           <div className={classes.body}>
             <div className={classes.search}>
-              {/* <SearchBar /> */}
               <Gallery />
             </div>
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 

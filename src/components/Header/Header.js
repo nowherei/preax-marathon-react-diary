@@ -1,9 +1,6 @@
 import React from 'react';
 import classes from './Header.module.css';
 import logo from '../../assets/logo.svg';
-import SearchBar from '../common/SearchBar';
-import MoodSelect from '../common/MoodSelect';
-import Button from '../common/Button';
 import { Link } from 'react-router-dom';
 
 
@@ -25,10 +22,10 @@ function Header() {
             {/* <NavLink to={'/new'}>
 
             </NavLink> */}
-            <Link to={'/'}>
+            <Link to='/'>
               <span className={`${classes.btn} ${classes.btn__orange}`}> Список</span>
             </Link>
-            <Link to={'/new'}>
+            <Link to='/new'>
               <span className={`${classes.btn} ${classes.btn__green}`}>Запись</span>
             </Link>
 
