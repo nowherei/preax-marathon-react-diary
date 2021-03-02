@@ -355,7 +355,7 @@ button:active {
   height: 100%;
   margin-top: 5%;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: row;
   overflow: hidden;
 }
@@ -699,5 +699,57 @@ button:active {
 .gallery-mob-image {
   width: 70%;
   margin: 5%;
+  border-radius: 12px;
+}
+
+
+/* ============================================================================= */
+/* переписываю стили под себя */
+
+.editor-name {
+  height: 60px;
+}
+ .editor-wrapper{
+  margin-top: 100px;
+  /* overflow: scroll; */
+}
+
+.editor-moods {
+  width: 100px;
+  height: 60px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 16px;
+}
+
+.editor-moods:focus {
+  outline: none;
+}
+
+
+.editor-images {
+}
+
+.editor-images-search {
+  justify-content: space-between;
+}
+
+.editor-gallery-wrapper {
+  
+}
+.gallery-main{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  height: 75vh;
+  padding: 20px 0;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.gallery-photo {
+  width: 300px;
+  margin: 7px;
   border-radius: 12px;
 }
