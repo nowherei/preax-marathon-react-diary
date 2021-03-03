@@ -99,6 +99,24 @@ button:active {
   align-items: center;
   flex-direction: row;
   text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.header-tag select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 20px;
+  z-index: 10;
+  background: transparent;
+  padding:15px;
+}
+
+.header-tag select:focus {
+  border: none;
+  outline: 0;
 }
 
 .header-tag-smile {
@@ -106,6 +124,22 @@ button:active {
   width: 20px;
   border-radius: 0px;
   display: flex;
+}
+
+.header-tag-smile {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+
+.header-tag-smile svg {
+  font-size: 9px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .header-tag-button {
@@ -347,7 +381,7 @@ button:active {
 .editor-wrapper {
   position: absolute;
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   width: 100%;
   height: 100%;
   margin-top: 5%;
@@ -539,7 +573,7 @@ button:active {
   }
 
   .card:hover {
-    cursor: pointer!important;
+    cursor: pointer !important;
   }
 
   .modal-body {
@@ -575,7 +609,35 @@ button:active {
     margin: 1%;
     padding: 1%;
     border-radius: 12px;
+    position: relative;
   }
+
+  .mobile-header-tag select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 16px;
+    outline: 0;
+    z-index: 10;
+    background: transparent;
+  }
+
+  .mob-smile {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+  }
+
+  .mob-smile svg {
+    font-size: 9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   .mobile-header-search {
     display: flex;
     height: 30px;
@@ -701,14 +763,13 @@ button:active {
   border-radius: 12px;
 }
 
-
 /* ============================================================================= */
 /* переписываю стили под себя */
 
 .editor-name {
   height: 60px;
 }
- .editor-wrapper{
+.editor-wrapper {
   margin-top: 100px;
   /* overflow: scroll; */
 }
@@ -716,7 +777,7 @@ button:active {
 .editor-moods {
   width: 100px;
   height: 60px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: none;
   border-radius: 12px;
   padding: 18px 16px;
@@ -726,7 +787,6 @@ button:active {
   outline: none;
 }
 
-
 .editor-images {
 }
 
@@ -735,9 +795,8 @@ button:active {
 }
 
 .editor-gallery-wrapper {
-  
 }
-.gallery-main{
+.gallery-main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;

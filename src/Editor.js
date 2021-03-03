@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Gallery from "./Gallery.js";
 import MobGallery from "./MobGallery.js";
+import { moods } from "./data";
 
 function Editor({ onPostAdded }) {
   const [query, setQuery] = useState(null);
@@ -13,25 +14,6 @@ function Editor({ onPostAdded }) {
     mood: "",
     img: "",
   });
-
-  const moods = [
-    "😌",
-    "😊",
-    "😄",
-    "🤣",
-    "😰",
-    "🥰",
-    "🙃",
-    "😔",
-    "😇",
-    "🤔",
-    "😩",
-    "😭",
-    "😤",
-    "😵",
-    "🤒",
-    "🤤",
-  ];
 
   const showDate = (e) => {
     e.target.type = "date";
@@ -50,8 +32,8 @@ function Editor({ onPostAdded }) {
   };
 
   const postDataChangeHandler = (e) => {
-    if (e.target.tagName == "IMG") {
-      setPostData({ ...postData, ["img"]: `${e.target.src}` });
+    if (e.target.tagName === "IMG") {
+      setPostData({ ...postData, img: `${e.target.src}` });
     } else {
       setPostData({ ...postData, [e.target.name]: e.target.value });
     }
@@ -81,7 +63,11 @@ function Editor({ onPostAdded }) {
           onChange={postDataChangeHandler}
         ></input>
         <div className="editor-tagDate">
-          <select className="editor-moods" name="mood" onChange={postDataChangeHandler}>
+          <select
+            className="editor-moods"
+            name="mood"
+            onChange={postDataChangeHandler}
+          >
             {moods.map((mood, index) => {
               return (
                 <option key={index} value={mood}>

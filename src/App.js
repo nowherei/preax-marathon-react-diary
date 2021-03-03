@@ -9,17 +9,23 @@ import { posts } from "./data";
 import "./App.css";
 
 function App() {
-
   const [notes, setNotes] = useState(posts);
+  const [searchString, setSearchString] = useState("");
+  const [searchMood, setSearchMood] = useState("");
 
-  console.log(notes);
+  const onPostAdded = (newNote) => {
+    setNotes({ ...notes, newNote });
+  };
 
-  const onPostAdded = newNote => {
-    setNotes({ ...posts, newNote });
+  const onChangeSearchString = (str) => {
+    setSearchString(str);
+  };
+
+  const onChangeSearchMood = (mood) => {
+    setSearchMood(mood);
   };
 
   const [isEditorDisplayed, toggleEditor] = useState(false);
-  const [isModalDisplayed, toggleModal] = useState(false);
   const [modalId, setModalId] = useState(null);
 
   return (
@@ -28,11 +34,22 @@ function App() {
         <Modal modalId={modalId} setModalId={setModalId} />
       ) : (
         <>
-          <Header toggleEditor={toggleEditor} />
+          <Header
+            onChangeSearchString={onChangeSearchString}
+            onChangeSearchMood={onChangeSearchMood}
+            searchString={searchString}
+            searchMood={searchMood}
+            toggleEditor={toggleEditor}
+          />
           {isEditorDisplayed ? (
-            <Editor onPostAdded={onPostAdded}/>
+            <Editor onPostAdded={onPostAdded} />
           ) : (
-            <Main posts={notes} setModalId={setModalId} />
+            <Main
+              posts={notes}
+              searchString={searchString}
+              searchMood={searchMood}
+              setModalId={setModalId}
+            />
           )}
         </>
       )}

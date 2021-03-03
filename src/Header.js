@@ -1,12 +1,20 @@
-function Header({ toggleEditor }) {
+import React from "react";
+import { moods } from "./data";
 
+const Header = ({
+  toggleEditor,
+  onChangeSearchString,
+  onChangeSearchMood,
+  searchString,
+  searchMood,
+}) => {
   const showEditor = () => {
-    toggleEditor(true)
-  }
+    toggleEditor(true);
+  };
 
   const hideEditor = () => {
     toggleEditor(false);
-  }
+  };
 
   return (
     <div className="header-wrap">
@@ -29,141 +37,163 @@ function Header({ toggleEditor }) {
           </svg>
         </div>
         <span className="header-text">Дневник</span>
-        <input className="textarea header-search " type="text" placeholder="Поиск"></input>
+        <input
+          className="textarea header-search"
+          type="text"
+          placeholder="Поиск"
+          onChange={(e) => {
+            onChangeSearchString(e.target.value);
+          }}
+          value={searchString}
+        />
         <div className="header-tag">
-          <div
-            className="header-tag-smile"><svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 15C12.2091 15 14 13.2091 14 11H6C6 13.2091 7.79086 15 10 15Z"
-                fill="#BDBDBD"
-              />
-              <path
-                d="M8 8C8 8.55229 7.55228 9 7 9C6.44772 9 6 8.55229 6 8C6 7.44772 6.44772 7 7 7C7.55228 7 8 7.44772 8 8Z"
-                fill="#BDBDBD"
-              />
-              <path
-                d="M13 9C13.5523 9 14 8.55229 14 8C14 7.44772 13.5523 7 13 7C12.4477 7 12 7.44772 12 8C12 8.55229 12.4477 9 13 9Z"
-                fill="#BDBDBD"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10ZM18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
-                fill="#BDBDBD"
-              />
-            </svg></div>
-          <button className="header-tag-button">
-            <svg
-              width="16"
-              height="10"
-              viewBox="0 0 16 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.34317 0.757355L0.928955 2.17157L8.00001 9.24266L15.0711 2.1716L13.6569 0.757384L8.00003 6.41422L2.34317 0.757355Z"
-                fill="black"
-              />
-            </svg>
-          </button>
+          <select
+            value={searchMood}
+            onChange={(e) => onChangeSearchMood(e.target.value)}
+          >
+            <option></option>
+            {moods.map((item, key) => (
+              <option key={key}>{item}</option>
+            ))}
+          </select>
+          {searchMood === "" ? (
+            <div className="header-tag-smile">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 15C12.2091 15 14 13.2091 14 11H6C6 13.2091 7.79086 15 10 15Z"
+                  fill="#BDBDBD"
+                />
+                <path
+                  d="M8 8C8 8.55229 7.55228 9 7 9C6.44772 9 6 8.55229 6 8C6 7.44772 6.44772 7 7 7C7.55228 7 8 7.44772 8 8Z"
+                  fill="#BDBDBD"
+                />
+                <path
+                  d="M13 9C13.5523 9 14 8.55229 14 8C14 7.44772 13.5523 7 13 7C12.4477 7 12 7.44772 12 8C12 8.55229 12.4477 9 13 9Z"
+                  fill="#BDBDBD"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10ZM18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
+                  fill="#BDBDBD"
+                />
+              </svg>
+            </div>
+          ) : null}
         </div>
         <div className="header-button-wrapper">
           <button className="header-button-feed" onClick={hideEditor}>
-            <div><svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M4 4V8H8V4H4Z" fill="#1E2022" />
-              <path d="M10 4H14V8H10V4Z" fill="#1E2022" />
-              <path d="M10 10V14H14V10H10Z" fill="#1E2022" />
-              <path d="M4 10H8V14H4V10Z" fill="#1E2022" />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M0 0H18V18H0V0ZM2 2V16H16V2H2Z"
-                fill="#1E2022"
-              />
-            </svg></div>
+            <div>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M4 4V8H8V4H4Z" fill="#1E2022" />
+                <path d="M10 4H14V8H10V4Z" fill="#1E2022" />
+                <path d="M10 10V14H14V10H10Z" fill="#1E2022" />
+                <path d="M4 10H8V14H4V10Z" fill="#1E2022" />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M0 0H18V18H0V0ZM2 2V16H16V2H2Z"
+                  fill="#1E2022"
+                />
+              </svg>
+            </div>
             <span className="header-button-text">Список</span>
           </button>
           <button className="header-button-add hide" onClick={showEditor}>
-            <div><svg
-              width="21"
-              height="21"
-              viewBox="0 0 21 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M19.2635 0.292893C18.873 -0.097631 18.2398 -0.0976311 17.8493 0.292893L16.9769 1.16525C15.8618 0.632544 14.4857 0.82801 13.5621 1.75165L2.95549 12.3582L8.61234 18.0151L19.2189 7.4085C20.1426 6.48486 20.338 5.1088 19.8053 3.99367L20.6777 3.12132C21.0682 2.7308 21.0682 2.09763 20.6777 1.70711L19.2635 0.292893ZM14.9955 8.80353L8.61234 15.1867L5.78392 12.3582L12.1671 5.9751L14.9955 8.80353ZM16.8138 6.98525L17.8047 5.99429C18.1953 5.60376 18.1953 4.9706 17.8047 4.58007L16.3905 3.16586C16 2.77534 15.3668 2.77534 14.9763 3.16586L13.9853 4.15683L16.8138 6.98525Z"
-                fill="white"
-              />
-              <path
-                d="M0 20.9502L2.12171 13.1717L7.77817 18.8289L0 20.9502Z"
-                fill="white"
-              />
-            </svg></div>
-            <span className="header-button-text" style={{ color: 'white' }}>Запись</span>
-          </button></div>
+            <div>
+              <svg
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M19.2635 0.292893C18.873 -0.097631 18.2398 -0.0976311 17.8493 0.292893L16.9769 1.16525C15.8618 0.632544 14.4857 0.82801 13.5621 1.75165L2.95549 12.3582L8.61234 18.0151L19.2189 7.4085C20.1426 6.48486 20.338 5.1088 19.8053 3.99367L20.6777 3.12132C21.0682 2.7308 21.0682 2.09763 20.6777 1.70711L19.2635 0.292893ZM14.9955 8.80353L8.61234 15.1867L5.78392 12.3582L12.1671 5.9751L14.9955 8.80353ZM16.8138 6.98525L17.8047 5.99429C18.1953 5.60376 18.1953 4.9706 17.8047 4.58007L16.3905 3.16586C16 2.77534 15.3668 2.77534 14.9763 3.16586L13.9853 4.15683L16.8138 6.98525Z"
+                  fill="white"
+                />
+                <path
+                  d="M0 20.9502L2.12171 13.1717L7.77817 18.8289L0 20.9502Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+            <span className="header-button-text" style={{ color: "white" }}>
+              Запись
+            </span>
+          </button>
+        </div>
       </header>
       <div className="mobile-search hide">
-        <input className="textarea mobile-header-search" type="text" placeholder="Поиск"></input>
+        <input
+          className="textarea mobile-header-search"
+          type="text"
+          placeholder="Поиск"
+          onChange={(e) => {
+            onChangeSearchString(e.target.value);
+          }}
+          value={searchString}
+        />
         <div className="mobile-header-tag">
-          <div
-            className="mob-smile"><svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 15C12.2091 15 14 13.2091 14 11H6C6 13.2091 7.79086 15 10 15Z"
-                fill="#BDBDBD"
-              />
-              <path
-                d="M8 8C8 8.55229 7.55228 9 7 9C6.44772 9 6 8.55229 6 8C6 7.44772 6.44772 7 7 7C7.55228 7 8 7.44772 8 8Z"
-                fill="#BDBDBD"
-              />
-              <path
-                d="M13 9C13.5523 9 14 8.55229 14 8C14 7.44772 13.5523 7 13 7C12.4477 7 12 7.44772 12 8C12 8.55229 12.4477 9 13 9Z"
-                fill="#BDBDBD"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10ZM18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
-                fill="#BDBDBD"
-              />
-            </svg></div>
-          <button className="header-tag-button">
-            <svg
-              width="16"
-              height="10"
-              viewBox="0 0 16 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.34317 0.757355L0.928955 2.17157L8.00001 9.24266L15.0711 2.1716L13.6569 0.757384L8.00003 6.41422L2.34317 0.757355Z"
-                fill="black"
-              />
-            </svg>
-          </button>
-        </div></div>
+          <select
+            value={searchMood}
+            onChange={(e) => onChangeSearchMood(e.target.value)}
+          >
+            <option></option>
+            {moods.map((item, key) => (
+              <option key={key}>{item}</option>
+            ))}
+          </select>
+          {searchMood === "" ? (
+            <div className="mob-smile">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 15C12.2091 15 14 13.2091 14 11H6C6 13.2091 7.79086 15 10 15Z"
+                  fill="#BDBDBD"
+                />
+                <path
+                  d="M8 8C8 8.55229 7.55228 9 7 9C6.44772 9 6 8.55229 6 8C6 7.44772 6.44772 7 7 7C7.55228 7 8 7.44772 8 8Z"
+                  fill="#BDBDBD"
+                />
+                <path
+                  d="M13 9C13.5523 9 14 8.55229 14 8C14 7.44772 13.5523 7 13 7C12.4477 7 12 7.44772 12 8C12 8.55229 12.4477 9 13 9Z"
+                  fill="#BDBDBD"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10ZM18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
+                  fill="#BDBDBD"
+                />
+              </svg>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default Header;
